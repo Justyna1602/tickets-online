@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 
@@ -22,6 +23,21 @@ public class EventController {
         return "/events";
 
     }
+
+    @GetMapping("/add-event")
+    public String getForm(@ModelAttribute("event") Event event){
+        eventService.addEvent(event);
+        return "/add-event";
+    }
+//    @GetMapping("/add-event")
+//    public String getUpdateForm(Event event){
+//        eventService.addEvent(event);
+//        return "redirect:/add-event";
+//    }
+
+
+
+
 
 
 

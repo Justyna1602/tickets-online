@@ -7,10 +7,34 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
 <div class="container">
-  <!-- TODO: tabela z dostępnymi wydarzeniami-->
-</div>
+<body>
+<nav th:replace="fragments :: navbar(title='main')"></nav>
+<h1 style="text-align: center;"
+    class="border border-4 border-light p-3 mb-2 bg-info bg-opacity-10 text-black">Lista wydarzeń</h1>
+<table class="table">
+  <thead>
+  <tr style="text-align: center;">
+    <th>Tytuł</th>
+    <th>Data</th>
+    <th>Typ</th>
+    <th>Miejsce</th>
+    <th>Ilość uczestników</th>
+    <th>Dostępność</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr style="text-align: center;" th:each="event: ${events}">
+    <td th:text="${event.title}"></td>
+    <td th:text="${event.date}"></td>
+    <td th:text="${event.eventType}"></td>
+    <td th:value="Integer${event.numberOfParticipants}"></td>
+    <td th:text="${event.availability}"></td>
+
+  </tr>
+  </tbody>
+</table>
 
 </body>
+</div>
 </html>

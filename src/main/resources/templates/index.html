@@ -14,9 +14,11 @@
       }
   </style>
 </head>
-<body>
-<h1 class="border border-light bg-info bg-opacity-10 text-center"> Bilety Online </h1>
 <div class="container">
+<body>
+<nav th:replace="fragments :: navbar(title='main')"></nav>
+<h1 class="border border-light bg-info bg-opacity-10 text-center"> Bilety Online </h1>
+
   <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
     <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
       <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
@@ -24,6 +26,18 @@
       </svg>
     </a>
   </header>
+  <div class="card bg-info border border-light bg-opacity-10" style="width: 20rem; margin-left: -10px">
+    <img src="https://www.swietajno.ug.gov.pl/system/obj/1192_wydarzenia.jpg" class="card-img-top">
+    <div class="card-body bg-info">
+      <h5 class="card-title">Chcesz kupić bilet? </h5>
+      <p class="card-text">Sprawdź listę Naszych wydarzeń!<br>
+        Każdy znajdzie coś dla siebie!</p>
+      <div class="card-body bg-info bg-opacity-10">
+      <a th:href="@{/events}" class="card-link text-dark">Sprawdź  tutaj</a>
+      </div>
+    </div>
+
+  </div>
 
 
   <section id="about" class="bg-one">
@@ -85,6 +99,7 @@
       </div>
     </div>
   </footer>
-  </div>
+
 </body>
+</div>
 </html>
