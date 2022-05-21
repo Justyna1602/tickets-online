@@ -5,6 +5,7 @@ import com.ticketsOnline.repositories.EventRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
 public class EventService {
 
     private EventRepository eventRepository;
+    private UserService userService;
 
 
     public List<Event> getAll() {
@@ -45,7 +47,20 @@ public class EventService {
         }
     }
 
+    public void update(Event event) {
+        if(event.getId() != null) {
+            Event updatedEvent = eventRepository.getById(event.getId());
+            updatedEvent.setTitle(event.getTitle());
+            updatedEvent.setDate(event.getDate());
+            updatedEvent.setEventType(event.getEventType());
+            updatedEvent.setPlace(event.getPlace());
+            updatedEvent.setNumberOfParticipants(event.getNumberOfParticipants());
+            updatedEvent.setCustomer(event.getCustomer());
+            updatedEvent.setAvailability(event.isAvailability());
 
+        }
+
+    }
 
 
 

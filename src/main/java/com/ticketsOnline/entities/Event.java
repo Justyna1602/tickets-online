@@ -21,7 +21,7 @@ public class Event {
     private String place;
     private Integer numberOfParticipants;
     @ManyToOne
-    private User savedUser;
+    private User customer;
     private boolean availability;
 
 

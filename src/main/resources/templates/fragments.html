@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html><html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head">
   <meta charset="UTF-8">
   <title></title>
@@ -9,13 +8,15 @@
 </head>
 <body>
 <nav th:fragment="navbar" class="navbar sticky-top navbar-light" style="background-color: #e3f2fd;">
-<div class="display-7">
-  <ul class=""nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 >
-
-
-  </ul>
-</div>
-
+  <div class="display-7">
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 ">
+      <li><a th:href="@{/}" class="nav-link px-2 link-dark"> Strona główna </a></li>
+      <li><a th:href="@{/events}" class="nav-link px-2 link-dark">Wydarzenia</a></li>
+      <li><a th:href="@{/opinions}" class="nav-link px-2 link-dark">Opinie</a></li>
+      <li><a th:href="@{/about-us}" class="nav-link px-2 link-dark">O Nas</a></li>
+      <li><a th:href="@{/contact}" class="nav-link px-2 link-dark">Kontakt</a></li>
+    </ul>
+  </div>
 
 </nav>
 </body>

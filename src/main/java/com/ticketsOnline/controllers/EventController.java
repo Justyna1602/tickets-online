@@ -29,12 +29,20 @@ public class EventController {
         eventService.addEvent(event);
         return "/add-event";
     }
-//    @GetMapping("/add-event")
-//    public String getUpdateForm(Event event){
-//        eventService.addEvent(event);
-//        return "redirect:/add-event";
-//    }
+    @GetMapping("/contact")
+    public String contact() {
+        return "contact";
+    }
 
+    @GetMapping("/opinions")
+    public String opinions() {
+        return "opinions";
+    }
+
+    @GetMapping("/about-us")
+    public String aboutUs() {
+        return "about-us";
+    }
 
 
 
