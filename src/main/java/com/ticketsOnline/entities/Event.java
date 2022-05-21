@@ -4,10 +4,7 @@ package com.ticketsOnline.entities;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
@@ -19,10 +16,14 @@ public class Event {
     private Integer id;
     private String title;
     private String date;
-    private String eventType; // zmiana typu prz robieniu zlączeń!
+    @ManyToOne
+    private EventType eventType;
     private String place;
     private Integer numberOfParticipants;
+    @ManyToOne
+    private User savedUser;
     private boolean availability;
+
 
 
 }

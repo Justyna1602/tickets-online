@@ -15,6 +15,7 @@ public class EventService {
 
     private EventRepository eventRepository;
 
+
     public List<Event> getAll() {
         return eventRepository.findAll();
 
@@ -43,6 +44,9 @@ public class EventService {
             throw exception;
         }
     }
+
+
+
 
 
 }
