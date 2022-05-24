@@ -21,8 +21,14 @@
       <input class="form-control" type="text" th:field="*{date}">
     </div>
     <div class="mb-3">
-      <label class="form-label">Typ</label>
-      <input class="form-control" type="text" th:field="*{eventType}">
+      <label>Typ</label>
+      <select type="text" class="form-control" th:field="*{eventType}">
+        <!--/*@thymesVar id="eventTypes" type="com.ticketsOnline.entities.EventType"*/-->
+        <option
+                th:each="eventType : ${eventTypes}" th:value="${eventTypes.id}"
+                th:text="${eventTypes.getFullEventType()}">
+        </option>
+      </select>
     </div>
     <div class="mb-3">
       <label class="form-label">Miejsce</label>

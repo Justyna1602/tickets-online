@@ -8,12 +8,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
+@Entity
 @Getter
 @Setter
-@Entity
 public class EventType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String eventType;
+    private String description;
+    private Integer ageLimit;
+
+
+    public String getFullEventType() {
+        return "Opis: " + description + '\'' +
+                ", Minimalny wiek uczestnika" + ageLimit +
+                '}';
+    }
 }

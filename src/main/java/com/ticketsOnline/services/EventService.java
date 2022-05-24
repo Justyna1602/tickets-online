@@ -48,7 +48,7 @@ public class EventService {
     }
 
     public void update(Event event) {
-        if(event.getId() != null) {
+        if (event.getId() != null) {
             Event updatedEvent = eventRepository.getById(event.getId());
             updatedEvent.setTitle(event.getTitle());
             updatedEvent.setDate(event.getDate());
@@ -61,7 +61,6 @@ public class EventService {
         }
 
     }
-
 
 
 }
