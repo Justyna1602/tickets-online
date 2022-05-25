@@ -3,16 +3,20 @@ package com.ticketsOnline.services;
 import com.ticketsOnline.entities.EventType;
 import com.ticketsOnline.repositories.EventTypeRepository;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 @Slf4j
 public class EventTypeService {
     private EventTypeRepository eventTypeRepository;
+
+    public EventTypeService(EventTypeRepository eventTypeRepository) {
+        this.eventTypeRepository = eventTypeRepository;
+    }
 
     public List<EventType> getAll() {
         return eventTypeRepository.findAll();
